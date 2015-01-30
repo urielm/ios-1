@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="j1y-V4-xli">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Share View Controller-->
+        <scene sceneID="ceB-am-kn3">
+            <objects>
+                <viewController id="j1y-V4-xli" customClass="ShareViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8bI-gs-bmD"/>
+                        <viewControllerLayoutGuide type="bottom" id="d5i-Ba-RvD"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="wbc-yd-nQP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aLt-7B-tMV">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvM-22-ecb">
+                                <rect key="frame" x="46" y="61" width="508" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="aLt-7B-tMV" secondAttribute="trailing" constant="-16" id="3Fa-Wf-MF8"/>
+                            <constraint firstItem="d5i-Ba-RvD" firstAttribute="top" secondItem="aLt-7B-tMV" secondAttribute="bottom" id="WwS-A1-bc2"/>
+                            <constraint firstItem="aLt-7B-tMV" firstAttribute="top" secondItem="wbc-yd-nQP" secondAttribute="topMargin" id="cbX-ly-WnS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kvM-22-ecb" secondAttribute="trailing" constant="30" id="fqJ-uc-Umo"/>
+                            <constraint firstItem="kvM-22-ecb" firstAttribute="top" secondItem="8bI-gs-bmD" secondAttribute="bottom" constant="41" id="hGl-qU-b62"/>
+                            <constraint firstItem="kvM-22-ecb" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leadingMargin" constant="30" id="mpB-OH-7PV"/>
+                            <constraint firstItem="aLt-7B-tMV" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leadingMargin" constant="-16" id="r02-FX-dJ2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="aLt-7B-tMV" id="RTf-vg-UyK"/>
+                        <outlet property="numberOfImages" destination="kvM-22-ecb" id="ao0-02-S2b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CEy-Cv-SGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="539" y="97"/>
+        </scene>
+    </scenes>
+</document>

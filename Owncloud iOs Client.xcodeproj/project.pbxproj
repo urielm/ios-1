@@ -488,6 +488,9 @@
 		59C3AC1C1A287DE3005433A1 /* KKPasscodeSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68968A17F599060033B3C1 /* KKPasscodeSettingsViewController.m */; };
 		59C3AC1D1A287DE3005433A1 /* KKPasscodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68968C17F599060033B3C1 /* KKPasscodeViewController.m */; };
 		59C3AC1F1A287E3B005433A1 /* OCPortraitNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68969817F9AC860033B3C1 /* OCPortraitNavigationViewController.m */; };
+		59C440641A7B94F800BA5E87 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C440631A7B94F800BA5E87 /* ShareViewController.m */; };
+		59C440661A7B94F800BA5E87 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C440651A7B94F800BA5E87 /* MainInterface.storyboard */; };
+		59C440691A7B94F800BA5E87 /* ownCloud Share.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 59C4405E1A7B94F800BA5E87 /* ownCloud Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		59C521F91A1B7C3A00C5EF76 /* ManageNetworkErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C9D323195C0EFB00400AE2 /* ManageNetworkErrors.m */; };
 		59C88E8F1A27335B00D83AB4 /* BackRootFolderIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40AB1F5E1A123B03003E7397 /* BackRootFolderIcon@3x.png */; };
 		59C88E901A27335B00D83AB4 /* doc_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40E354D61A14FD53000E7FE4 /* doc_icon@3x.png */; };
@@ -585,6 +588,13 @@
 			remoteGlobalIDString = EA7CC896183E11E600B6A4B4;
 			remoteInfo = "ownCloud iOS library";
 		};
+		59C440671A7B94F800BA5E87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1324296F15ADBB3700DF823E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59C4405D1A7B94F800BA5E87;
+			remoteInfo = "ownCloud Share";
+		};
 		EA8667E018AA291C00D3550D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EA8667DB18AA291C00D3550D /* ownCloud iOS library.xcodeproj */;
@@ -644,6 +654,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				EAB0AB4A19ED356A00764C31 /* ownCloudExtAppFileProvider.appex in Embed App Extensions */,
+				59C440691A7B94F800BA5E87 /* ownCloud Share.appex in Embed App Extensions */,
 				EAB0AB4F19ED356A00764C31 /* ownCloudExtApp.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -1121,6 +1132,12 @@
 		59AE9EB11990FEC2003380A8 /* CheckHasShareSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckHasShareSupport.m; path = "Network/Server Version Checks/CheckHasShareSupport.m"; sourceTree = "<group>"; };
 		59AF279C19920A1100359151 /* CheckHasCookiesSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckHasCookiesSupport.h; path = "Network/Server Version Checks/CheckHasCookiesSupport.h"; sourceTree = "<group>"; };
 		59AF279D19920A1100359151 /* CheckHasCookiesSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckHasCookiesSupport.m; path = "Network/Server Version Checks/CheckHasCookiesSupport.m"; sourceTree = "<group>"; };
+		59C4405E1A7B94F800BA5E87 /* ownCloud Share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ownCloud Share.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		59C440611A7B94F800BA5E87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59C440621A7B94F800BA5E87 /* ShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		59C440631A7B94F800BA5E87 /* ShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		59C440651A7B94F800BA5E87 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		59C4406E1A7B950100BA5E87 /* ownCloud Share.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "ownCloud Share.entitlements"; sourceTree = "<group>"; };
 		59C9D322195C0EFB00400AE2 /* ManageNetworkErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ManageNetworkErrors.h; path = Utils/Errors/ManageNetworkErrors.h; sourceTree = "<group>"; };
 		59C9D323195C0EFB00400AE2 /* ManageNetworkErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ManageNetworkErrors.m; path = Utils/Errors/ManageNetworkErrors.m; sourceTree = "<group>"; };
 		59D717DE1959755600075E02 /* folder-shared.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "folder-shared.png"; sourceTree = "<group>"; };
@@ -1252,6 +1269,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		59C4405B1A7B94F800BA5E87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAB0AB2F19ED356A00764C31 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1292,6 +1316,7 @@
 				132429B415ADBB3800DF823E /* Owncloud iOs ClientTests */,
 				EAB0AB3319ED356A00764C31 /* ownCloudExtApp */,
 				EAB0AB4119ED356A00764C31 /* ownCloudExtAppFileProvider */,
+				59C4405F1A7B94F800BA5E87 /* ownCloud Share */,
 				1324297B15ADBB3700DF823E /* Frameworks */,
 				1324297915ADBB3700DF823E /* Products */,
 			);
@@ -1304,6 +1329,7 @@
 				132429AD15ADBB3800DF823E /* Owncloud iOs ClientTests.xctest */,
 				EAB0AB3219ED356A00764C31 /* ownCloudExtApp.appex */,
 				EAB0AB4019ED356A00764C31 /* ownCloudExtAppFileProvider.appex */,
+				59C4405E1A7B94F800BA5E87 /* ownCloud Share.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2313,6 +2339,26 @@
 			name = "Server Version Checks";
 			sourceTree = "<group>";
 		};
+		59C4405F1A7B94F800BA5E87 /* ownCloud Share */ = {
+			isa = PBXGroup;
+			children = (
+				59C4406E1A7B950100BA5E87 /* ownCloud Share.entitlements */,
+				59C440621A7B94F800BA5E87 /* ShareViewController.h */,
+				59C440631A7B94F800BA5E87 /* ShareViewController.m */,
+				59C440651A7B94F800BA5E87 /* MainInterface.storyboard */,
+				59C440601A7B94F800BA5E87 /* Supporting Files */,
+			);
+			path = "ownCloud Share";
+			sourceTree = "<group>";
+		};
+		59C440601A7B94F800BA5E87 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				59C440611A7B94F800BA5E87 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		59C9D321195C0EC800400AE2 /* Errors */ = {
 			isa = PBXGroup;
 			children = (
@@ -2678,6 +2724,7 @@
 				EAB0AB4C19ED356A00764C31 /* PBXTargetDependency */,
 				EAB0AB4E19ED356A00764C31 /* PBXTargetDependency */,
 				EAB0AB5119ED356A00764C31 /* PBXTargetDependency */,
+				59C440681A7B94F800BA5E87 /* PBXTargetDependency */,
 			);
 			name = "Owncloud iOs Client";
 			productName = "Owncloud iOs Client";
@@ -2702,6 +2749,23 @@
 			productName = "Owncloud iOs ClientTests";
 			productReference = 132429AD15ADBB3800DF823E /* Owncloud iOs ClientTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		59C4405D1A7B94F800BA5E87 /* ownCloud Share */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59C4406D1A7B94F800BA5E87 /* Build configuration list for PBXNativeTarget "ownCloud Share" */;
+			buildPhases = (
+				59C4405A1A7B94F800BA5E87 /* Sources */,
+				59C4405B1A7B94F800BA5E87 /* Frameworks */,
+				59C4405C1A7B94F800BA5E87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ownCloud Share";
+			productName = "ownCloud Share";
+			productReference = 59C4405E1A7B94F800BA5E87 /* ownCloud Share.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 		EAB0AB3119ED356A00764C31 /* ownCloudExtApp */ = {
 			isa = PBXNativeTarget;
@@ -2753,6 +2817,15 @@
 								enabled = 1;
 							};
 							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
+					59C4405D1A7B94F800BA5E87 = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 9B5WD74GWJ;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
 						};
@@ -2810,6 +2883,7 @@
 				132429AC15ADBB3800DF823E /* Owncloud iOs ClientTests */,
 				EAB0AB3119ED356A00764C31 /* ownCloudExtApp */,
 				EAB0AB3F19ED356A00764C31 /* ownCloudExtAppFileProvider */,
+				59C4405D1A7B94F800BA5E87 /* ownCloud Share */,
 			);
 		};
 /* End PBXProject section */
@@ -3106,6 +3180,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		59C4405C1A7B94F800BA5E87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59C440661A7B94F800BA5E87 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAB0AB3019ED356A00764C31 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3377,6 +3459,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		59C4405A1A7B94F800BA5E87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59C440641A7B94F800BA5E87 /* ShareViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAB0AB2E19ED356A00764C31 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3449,6 +3539,11 @@
 			isa = PBXTargetDependency;
 			name = "ownCloud iOS library";
 			targetProxy = 597A87961A013FD50071F2AF /* PBXContainerItemProxy */;
+		};
+		59C440681A7B94F800BA5E87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59C4405D1A7B94F800BA5E87 /* ownCloud Share */;
+			targetProxy = 59C440671A7B94F800BA5E87 /* PBXContainerItemProxy */;
 		};
 		EA8667E618AA297F00D3550D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3688,6 +3783,57 @@
 			};
 			name = Release;
 		};
+		59C4406A1A7B94F800BA5E87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CODE_SIGN_ENTITLEMENTS = "ownCloud Share/ownCloud Share.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "ownCloud Share/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		59C4406B1A7B94F800BA5E87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CODE_SIGN_ENTITLEMENTS = "ownCloud Share/ownCloud Share.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "ownCloud Share/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		EAB0AB5219ED356A00764C31 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3911,6 +4057,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		59C4406D1A7B94F800BA5E87 /* Build configuration list for PBXNativeTarget "ownCloud Share" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59C4406A1A7B94F800BA5E87 /* Debug */,
+				59C4406B1A7B94F800BA5E87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		EAB0AB5719ED356A00764C31 /* Build configuration list for PBXNativeTarget "ownCloudExtAppFileProvider" */ = {
 			isa = XCConfigurationList;
