@@ -18,28 +18,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aLt-7B-tMV">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="100" width="600" height="500"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvM-22-ecb">
-                                <rect key="frame" x="46" y="61" width="508" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvM-22-ecb">
+                                <rect key="frame" x="46" y="75" width="508" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6aL-BO-KIu">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="nut-My-Cas"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="aLt-7B-tMV" secondAttribute="trailing" constant="-16" id="3Fa-Wf-MF8"/>
+                            <constraint firstItem="6aL-BO-KIu" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leadingMargin" constant="-16" id="3QC-ZO-EJZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6aL-BO-KIu" secondAttribute="trailing" constant="-16" id="9W9-wC-FsB"/>
                             <constraint firstItem="d5i-Ba-RvD" firstAttribute="top" secondItem="aLt-7B-tMV" secondAttribute="bottom" id="WwS-A1-bc2"/>
-                            <constraint firstItem="aLt-7B-tMV" firstAttribute="top" secondItem="wbc-yd-nQP" secondAttribute="topMargin" id="cbX-ly-WnS"/>
+                            <constraint firstItem="aLt-7B-tMV" firstAttribute="top" secondItem="wbc-yd-nQP" secondAttribute="topMargin" constant="100" id="cbX-ly-WnS"/>
+                            <constraint firstItem="kvM-22-ecb" firstAttribute="top" secondItem="6aL-BO-KIu" secondAttribute="bottom" constant="11" id="dxV-T3-L9N"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kvM-22-ecb" secondAttribute="trailing" constant="30" id="fqJ-uc-Umo"/>
-                            <constraint firstItem="kvM-22-ecb" firstAttribute="top" secondItem="8bI-gs-bmD" secondAttribute="bottom" constant="41" id="hGl-qU-b62"/>
+                            <constraint firstItem="6aL-BO-KIu" firstAttribute="top" secondItem="wbc-yd-nQP" secondAttribute="topMargin" constant="20" id="mbF-ZY-eBh"/>
                             <constraint firstItem="kvM-22-ecb" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leadingMargin" constant="30" id="mpB-OH-7PV"/>
                             <constraint firstItem="aLt-7B-tMV" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leadingMargin" constant="-16" id="r02-FX-dJ2"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="aLt-7B-tMV" id="RTf-vg-UyK"/>
+                        <outlet property="navigationBar" destination="6aL-BO-KIu" id="OQP-aB-4HJ"/>
                         <outlet property="numberOfImages" destination="kvM-22-ecb" id="ao0-02-S2b"/>
                     </connections>
                 </viewController>

@@ -11,6 +11,7 @@
 
 @interface ShareViewController : UIViewController
 
+@property(nonatomic, strong) IBOutlet UINavigationBar *navigationBar;
 @property(nonatomic, strong) IBOutlet UILabel *numberOfImages;
 @property(nonatomic, strong) IBOutlet UIImageView *imageView;
 

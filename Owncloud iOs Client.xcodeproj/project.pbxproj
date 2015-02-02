@@ -4065,6 +4065,7 @@
 				59C4406B1A7B94F800BA5E87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EAB0AB5719ED356A00764C31 /* Build configuration list for PBXNativeTarget "ownCloudExtAppFileProvider" */ = {
 			isa = XCConfigurationList;

@@ -18,12 +18,18 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     
+    //Naviation
     
-    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.owncloud.iOSmobileapp"];
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(cancelView:)];
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleDone target:self action:@selector(cancelView:)];
     
-    [sharedDefaults synchronize];   // (!!) This is crucial.
+    UINavigationItem *item = [[UINavigationItem alloc] initWithTitle:@"ownCloud"];
+    item.leftBarButtonItem = leftButton;
+    item.rightBarButtonItem = rightButton;
+    item.hidesBackButton = YES;
+    [self.navigationBar pushNavigationItem:item animated:NO];
     
-    
+    //Items
     for (NSExtensionItem *item in self.extensionContext.inputItems) {
         
         NSArray *items = item.attachments;
@@ -73,6 +79,14 @@
 - (NSArray *)configurationItems {
     // To add configuration options via table cells at the bottom of the sheet, return an array of SLComposeSheetConfigurationItem here.
     return @[];
+}
+
+#pragma mark - Cancel
+
+- (void) cancelView {
+    [self dismissViewControllerAnimated:YES completion:^{
+        //TODO: Delete here the temporal cache files if needed
+    }];
 }
 
 @end
