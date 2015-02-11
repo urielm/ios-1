@@ -2303,6 +2303,7 @@ NSString *loginViewControllerRotate = @"loginViewControllerRotate";
 }
 
 - (void) showHelpURLInSafari {
+    /*
     DLog(@"showHelpURLInSafari");
     
     NSURL *url = [NSURL URLWithString:k_url_link_on_login];
@@ -2310,6 +2311,7 @@ NSString *loginViewControllerRotate = @"loginViewControllerRotate";
     if (![[UIApplication sharedApplication] openURL:url]) {
         DLog(@"Failed to open url: %@", [url description]);
     }
+     */
 }
 
 #pragma mark - SSL Certificates
