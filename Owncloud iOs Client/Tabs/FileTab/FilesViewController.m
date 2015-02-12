@@ -347,7 +347,11 @@
         _mUser = currentUser;
         //Update the table footer
         [self setTheLabelOnTheTableFooter];
-        [self initLoading];
+        
+        if ([[ManageFilesDB getFilesByFileIdForActiveUser:_fileIdToShowFiles.idFile] count] == 0) {
+            [self initLoading];
+        }
+        
         //Reload table from DB
         [self reloadTableFromDataBase];
         
@@ -735,9 +739,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unBlockViewWhileFileIsDownloading) name:IpadFilePreviewViewControllerFileFinishDownloadNotification object:nil];
     //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unBlockViewWhileFileIsDownloading) name:IpadFinishDownloadStateWhenApplicationDidEnterBackground object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectCellWithThisFile:) name:IpadSelectRowInFileListNotification object:nil];
-    //Add a observer to the end and init loading
+    //Add a observer to the end loading, init loading and reloadTableFromDataBase
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endLoading) name:EndLoadingFileListNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(initLoading) name:InitLoadingFileListNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTableFromDataBase) name:ReloadFileListFromDataBaseNotification object:nil];
     
     //Add an observer for know when the LoginViewController rotate
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(willRotateToInterfaceOrientation:duration:) name:loginViewControllerRotate object:nil];
@@ -1126,6 +1131,7 @@
         if(app.prepareFiles == nil) {
             app.prepareFiles = [[PrepareFilesToUpload alloc] init];
             app.prepareFiles.listOfFilesToUpload = [[NSMutableArray alloc] init];
+            app.prepareFiles.listOfAssetsToUpload = [[NSMutableArray alloc] init];
             app.prepareFiles.arrayOfRemoteurl = [[NSMutableArray alloc] init];
             app.prepareFiles.listOfUploadOfflineToGenerateSQL = [[NSMutableArray alloc] init];
         }
