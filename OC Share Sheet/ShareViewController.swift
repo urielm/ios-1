@@ -77,6 +77,7 @@ import AVFoundation
         let passcodeView = KKPasscodeViewController(nibName: nil, bundle: nil)
         passcodeView.delegate = self
         passcodeView.mode = UInt(KKPasscodeModeEnter)
+        passcodeView.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: Selector("cancelView"))
         
         let ocNavController = OCNavigationController(rootViewController: passcodeView)
         ocNavController.modalPresentationStyle = UIModalPresentationStyle.FormSheet
