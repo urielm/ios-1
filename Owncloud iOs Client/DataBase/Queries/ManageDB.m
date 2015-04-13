@@ -55,7 +55,7 @@
             DLog(@"Error in createDataBase table files_backup");
         }
         
-        correctQuery = [db executeUpdate:@"CREATE TABLE IF NOT EXISTS 'passcode' ('id' INTEGER PRIMARY KEY, 'passcode' VARCHAR)"];
+        correctQuery = [db executeUpdate:@"CREATE TABLE IF NOT EXISTS 'passcode' ('id' INTEGER PRIMARY KEY, 'passcode' VARCHAR, 'is_passcode_entered' BOOL)"];
         
         if (!correctQuery) {
             DLog(@"Error in createDataBase table passcode");
@@ -781,9 +781,30 @@
         }
         
     }];
-    
 }
 
+///-----------------------------------
+/// @name Update Database version with 11 version to 12
+///-----------------------------------
 
+/**
+ * Changes:
+ *
+ * Alter passcode table to add the new is_passcode_entered
+ *
+ */
++ (void) updateDBVersion12To13 {
+    FMDatabaseQueue *queue = [AppDelegate sharedDatabase];
+    
+    [queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
+        BOOL correctQuery=NO;
+        
+        correctQuery = [db executeUpdate:@"ALTER TABLE passcode ADD is_passcode_entered BOOL NOT NULL DEFAULT 0"];
+        if (!correctQuery) {
+            DLog(@"Error update version 12 to 13");
+        }
+        
+    }];
+}
 
 @end

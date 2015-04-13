@@ -543,6 +543,10 @@
 		59D774CE1910EE0F004322BA /* UtilsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D774CD1910EE0F004322BA /* UtilsTableView.m */; };
 		59DA496619F7A4B600DD3619 /* Owncloud iOs Client.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 593F7CAD19F01134004136F7 /* Owncloud iOs Client.entitlements */; };
 		59DA4F3C1A07A97100472639 /* DocumentPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59DA4F3B1A07A97100472639 /* DocumentPickerViewController.xib */; };
+		59DE95891ADBAC4B00EA63D2 /* PasscodeDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DE95881ADBAC4B00EA63D2 /* PasscodeDto.m */; };
+		59DE958A1ADBAC4B00EA63D2 /* PasscodeDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DE95881ADBAC4B00EA63D2 /* PasscodeDto.m */; };
+		59DE958B1ADBAC4B00EA63D2 /* PasscodeDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DE95881ADBAC4B00EA63D2 /* PasscodeDto.m */; };
+		59DE958C1ADBAC4B00EA63D2 /* PasscodeDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DE95881ADBAC4B00EA63D2 /* PasscodeDto.m */; };
 		EA1415A61AB1B89E0083EACE /* OCToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EA42FA4D1804217D0006DB7C /* OCToolBar.m */; };
 		EA1787AC17E33BB9005171AB /* OCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1787AB17E33BB9005171AB /* OCNavigationController.m */; };
 		EA1F62CD1A5EBC2100D6346F /* UtilsUrls.m in Sources */ = {isa = PBXBuildFile; fileRef = 593F7CA919EFDE96004136F7 /* UtilsUrls.m */; };
@@ -1394,6 +1398,8 @@
 		59D774CC1910EE0F004322BA /* UtilsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilsTableView.h; path = Utils/UtilsTableView.h; sourceTree = "<group>"; };
 		59D774CD1910EE0F004322BA /* UtilsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UtilsTableView.m; path = Utils/UtilsTableView.m; sourceTree = "<group>"; };
 		59DA4F3B1A07A97100472639 /* DocumentPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocumentPickerViewController.xib; sourceTree = "<group>"; };
+		59DE95871ADBAC4B00EA63D2 /* PasscodeDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasscodeDto.h; path = DataBase/DTOs/PasscodeDto.h; sourceTree = "<group>"; };
+		59DE95881ADBAC4B00EA63D2 /* PasscodeDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PasscodeDto.m; path = DataBase/DTOs/PasscodeDto.m; sourceTree = "<group>"; };
 		EA1787AA17E33BB9005171AB /* OCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCNavigationController.h; path = Tabs/FileTab/OCNavigationController.h; sourceTree = "<group>"; };
 		EA1787AB17E33BB9005171AB /* OCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCNavigationController.m; path = Tabs/FileTab/OCNavigationController.m; sourceTree = "<group>"; };
 		EA2678FB1876E4B8008678DE /* notSharedItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notSharedItem.png; sourceTree = "<group>"; };
@@ -1788,6 +1794,8 @@
 				59A9A724196E8A370042FEAC /* CookiesStorageDto.m */,
 				EAC598581A56A150003192B2 /* ProvidingFileDto.h */,
 				EAC598591A56A150003192B2 /* ProvidingFileDto.m */,
+				59DE95871ADBAC4B00EA63D2 /* PasscodeDto.h */,
+				59DE95881ADBAC4B00EA63D2 /* PasscodeDto.m */,
 			);
 			name = DTOs;
 			sourceTree = "<group>";
@@ -3925,6 +3933,7 @@
 				148DD6FE17786BF200FB9977 /* FileNameUtils.m in Sources */,
 				59C71D201A9216AE00F66166 /* ReaderThumbsView.m in Sources */,
 				40FF874319F81396008B7C62 /* OCKeychain.m in Sources */,
+				59DE95891ADBAC4B00EA63D2 /* PasscodeDto.m in Sources */,
 				1487F135177C2F08004A1A5A /* ManageAppSettingsDB.m in Sources */,
 				1487F138177C2F48004A1A5A /* ManageDB.m in Sources */,
 				1487F13B177C2F73004A1A5A /* ManageFilesDB.m in Sources */,
@@ -3990,6 +3999,7 @@
 				EAEDC08B1AB19498004836EB /* FileListDBOperations.m in Sources */,
 				EAEDC0901AB19643004836EB /* SimpleFileListTableViewController.m in Sources */,
 				EAF7217B1AAF200A009F5596 /* FileDto.m in Sources */,
+				59DE958C1ADBAC4B00EA63D2 /* PasscodeDto.m in Sources */,
 				EA4B8E1E1AC92FCC004F335E /* KKPasscodeViewController.m in Sources */,
 				EAEDC0921AB196C6004836EB /* EmptyCell.m in Sources */,
 				EAEDC08E1AB194F8004836EB /* MBProgressHUD.m in Sources */,
@@ -4072,6 +4082,7 @@
 				599D99F01A0256D9008A9DB3 /* FMDatabase.m in Sources */,
 				599D99EF1A0256AF008A9DB3 /* UtilsUrls.m in Sources */,
 				599D99EE1A02566B008A9DB3 /* FMDatabaseQueue.m in Sources */,
+				59DE958A1ADBAC4B00EA63D2 /* PasscodeDto.m in Sources */,
 				EAC5985B1A56A150003192B2 /* ProvidingFileDto.m in Sources */,
 				EAB0AB3919ED356A00764C31 /* DocumentPickerViewController.m in Sources */,
 			);
@@ -4098,6 +4109,7 @@
 				EAFDF1771A76372A00655DBF /* NSString+Encoding.m in Sources */,
 				EA1F62D31A5EBDA100D6346F /* FMResultSet.m in Sources */,
 				EA1F62CD1A5EBC2100D6346F /* UtilsUrls.m in Sources */,
+				59DE958B1ADBAC4B00EA63D2 /* PasscodeDto.m in Sources */,
 				EA1F62D51A5EBDAA00D6346F /* FMDatabaseAdditions.m in Sources */,
 				EA6462841A6F98F300991913 /* UtilsDtos.m in Sources */,
 			);

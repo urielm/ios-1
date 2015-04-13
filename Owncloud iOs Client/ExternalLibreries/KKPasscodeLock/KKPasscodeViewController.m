@@ -27,6 +27,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import "ManageAppSettingsDB.h"
+#import "PasscodeDto.h"
 #ifdef CONTAINER_APP
 #import "AppDelegate.h"
 #endif
@@ -554,10 +555,11 @@
 					_passcodeConfirmationWarningLabel.text = NSLocalizedString(@"both_pass_not_same", nil); //KKPasscodeLockLocalizedString(@"Passcodes did not match. Try again.", @"");
 					[self moveToPreviousTableView];
 				} else {
-					/*if ([KKKeychain setString:_setPasscodeTextField.text forKey:@"passcode"]) {
-						[KKKeychain setString:@"YES" forKey:@"passcode_on"];
-					}*/
-                    [ManageAppSettingsDB insertPasscode:_setPasscodeTextField.text];
+                    PasscodeDto *passcode = [PasscodeDto new];
+                    passcode.passcode = _setPasscodeTextField.text;
+                    passcode.isPasscodeEntered = NO;
+                    
+                    [ManageAppSettingsDB insertPasscode:passcode];
 					
 					if ([_delegate respondsToSelector:@selector(didSettingsChanged:)]) {
 						[_delegate performSelector:@selector(didSettingsChanged:) withObject:self];
@@ -572,7 +574,7 @@
 			}
 		} else if (_mode == KKPasscodeModeChange) {
 			//NSString* passcode = [KKKeychain getStringForKey:@"passcode"];
-            NSString* passcode = [ManageAppSettingsDB getPassCode];
+            NSString* passcode = [ManageAppSettingsDB getPassCode].passcode;
 			if ([textField isEqual:_enterPasscodeTextField]) {
 				if ([passcode isEqualToString:_enterPasscodeTextField.text]) {
 					[self moveToNextTableView];
@@ -596,10 +598,11 @@
 					_passcodeConfirmationWarningLabel.text = NSLocalizedString(@"both_pass_not_same", nil); //KKPasscodeLockLocalizedString(@"Passcodes did not match. Try again.", "");
 					[self moveToPreviousTableView];
 				} else {
-					/*if ([KKKeychain setString:_setPasscodeTextField.text forKey:@"passcode"]) {
-						[KKKeychain setString:@"YES" forKey:@"passcode_on"];
-					}*/
-                    [ManageAppSettingsDB insertPasscode:_setPasscodeTextField.text];
+                    PasscodeDto *passcode = [PasscodeDto new];
+                    passcode.passcode = _setPasscodeTextField.text;
+                    passcode.isPasscodeEntered = NO;
+                    
+                    [ManageAppSettingsDB insertPasscode:passcode];
 					
 					if ([_delegate respondsToSelector:@selector(didSettingsChanged:)]) {
 						[_delegate performSelector:@selector(didSettingsChanged:) withObject:self];
@@ -628,7 +631,7 @@
 {
     if (_mode == KKPasscodeModeDisabled) {
        // NSString *passcode = [KKKeychain getStringForKey:@"passcode"];
-        NSString *passcode = [ManageAppSettingsDB getPassCode];
+        NSString *passcode = [ManageAppSettingsDB getPassCode].passcode;
         if ([_enterPasscodeTextField.text isEqualToString:passcode]) {
             /*if ([KKKeychain setString:@"NO" forKey:@"passcode_on"]) {
                 [KKKeychain setString:@"" forKey:@"passcode"];
@@ -649,7 +652,7 @@
         }
     } else if (_mode == KKPasscodeModeEnter) {
         ///NSString *passcode = [KKKeychain getStringForKey:@"passcode"];
-         NSString *passcode = [ManageAppSettingsDB getPassCode];
+         NSString *passcode = [ManageAppSettingsDB getPassCode].passcode;
         if ([_enterPasscodeTextField.text isEqualToString:passcode]) {
             
 
@@ -679,7 +682,7 @@
         }
     } else if (_mode == KKPasscodeModeChange) {
         //NSString *passcode = [KKKeychain getStringForKey:@"passcode"];
-        NSString *passcode = [ManageAppSettingsDB getPassCode];
+        NSString *passcode = [ManageAppSettingsDB getPassCode].passcode;
         if ([textField isEqual:_enterPasscodeTextField]) {
             if ([passcode isEqualToString:_enterPasscodeTextField.text]) {
                 [self moveToNextTableView];
@@ -706,8 +709,11 @@
                 _passcodeConfirmationWarningLabel.text = NSLocalizedString(@"both_pass_not_same", nil); //KKPasscodeLockLocalizedString(@"Passcodes did not match. Try again.", @"");
                 [self moveToPreviousTableView];
             } else {
+                PasscodeDto *passcode = [PasscodeDto new];
+                passcode.passcode = _setPasscodeTextField.text;
+                passcode.isPasscodeEntered = NO;
                 
-                [ManageAppSettingsDB insertPasscode:_setPasscodeTextField.text];
+                [ManageAppSettingsDB insertPasscode:passcode];
                 
                /* if ([KKKeychain setString:_setPasscodeTextField.text forKey:@"passcode"]) {
                     [KKKeychain setString:@"YES" forKey:@"passcode_on"];
@@ -733,8 +739,11 @@
             _passcodeConfirmationWarningLabel.text = NSLocalizedString(@"both_pass_not_same", nil); //KKPasscodeLockLocalizedString(@"Passcodes did not match. Try again.", @"");
             [self moveToPreviousTableView];
         } else {
+            PasscodeDto *passcode = [PasscodeDto new];
+            passcode.passcode = _setPasscodeTextField.text;
+            passcode.isPasscodeEntered = NO;
             
-            [ManageAppSettingsDB insertPasscode:_setPasscodeTextField.text];
+            [ManageAppSettingsDB insertPasscode:passcode];
             
             /*if ([KKKeychain setString:_setPasscodeTextField.text forKey:@"passcode"]) {
                 [KKKeychain setString:@"YES" forKey:@"passcode_on"];

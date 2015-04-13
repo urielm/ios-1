@@ -15,6 +15,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class PasscodeDto;
+
 @interface ManageAppSettingsDB : NSObject
 
 /*
@@ -25,14 +27,14 @@
 
 /*
  * Method that insert pin code
- * @passcode -> pin code
+ * @passcode -> PasscodeDto
  */
-+(void) insertPasscode: (NSString *) passcode;
++(void) insertPasscode: (PasscodeDto *) passcode;
 
 /*
  * Method that return the pin code
  */
-+(NSString *) getPassCode;
++(PasscodeDto *) getPassCode;
 
 /*
  * Method that remove the pin code

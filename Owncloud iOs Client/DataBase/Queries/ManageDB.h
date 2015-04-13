@@ -167,4 +167,16 @@
  */
 + (void) updateDBVersion11To12;
 
+///-----------------------------------
+/// @name Update Database version with 11 version to 12
+///-----------------------------------
+
+/**
+ * Changes:
+ *
+ * Alter passcode table to add the new is_passcode_entered
+ *
+ */
++ (void) updateDBVersion12To13;
+
 @end

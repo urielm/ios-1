@@ -17,6 +17,7 @@
 #import "FMDatabaseQueue.h"
 #import "FMDatabase.h"
 #import "UtilsUrls.h"
+#import "PasscodeDto.h"
 
 #ifdef CONTAINER_APP
 #import "AppDelegate.h"
@@ -68,9 +69,9 @@
 
 /*
 * Method that insert pin code
-* @passcode -> pin code
+* @passcode -> PasscodeDto
 */
-+(void) insertPasscode: (NSString *) passcode {
++(void) insertPasscode: (PasscodeDto *) passcode {
     
     FMDatabaseQueue *queue;
     
@@ -85,7 +86,7 @@
     [queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
         BOOL correctQuery=NO;
         
-        correctQuery = [db executeUpdate:@"INSERT INTO passcode(passcode) Values(?)", passcode];
+        correctQuery = [db executeUpdate:@"INSERT INTO passcode(passcode,is_passcode_entered) Values(?,?)", passcode.passcode, [NSNumber numberWithBool:passcode.isPasscodeEntered]];
         
         if (!correctQuery) {
             DLog(@"Error insert pin code");
@@ -97,11 +98,11 @@
 /*
  * Method that return the pin code
  */
-+(NSString *) getPassCode {
++(PasscodeDto *) getPassCode {
     
     DLog(@"getPassCode");
     
-    __block NSString *output = [NSString new];
+    __block PasscodeDto *output = [PasscodeDto new];
  
     FMDatabaseQueue *queue;
     
@@ -114,11 +115,11 @@
 #endif
     
     [queue inDatabase:^(FMDatabase *db) {
-        FMResultSet *rs = [db executeQuery:@"SELECT passcode FROM passcode  ORDER BY id DESC LIMIT 1"];
+        FMResultSet *rs = [db executeQuery:@"SELECT passcode, is_passcode_entered FROM passcode  ORDER BY id DESC LIMIT 1"];
         
         while ([rs next]) {
-            
-            output = [rs stringForColumn:@"passcode"];
+            output.passcode = [rs stringForColumn:@"passcode"];
+            output.isPasscodeEntered = [rs stringForColumn:@"is_passcode_entered"];
         }
         
     }];
