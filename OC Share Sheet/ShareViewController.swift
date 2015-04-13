@@ -137,6 +137,8 @@ import AVFoundation
     }
     
     func cancelView() {
+        
+        self.setPasscodeEntered(false)
        
         self.extensionContext?.completeRequestReturningItems(nil, completionHandler: nil)
         return
@@ -550,11 +552,22 @@ import AVFoundation
     
     func didPasscodeEnteredCorrectly(viewController: KKPasscodeViewController!) {
         println("Did passcode entered correctly")
+        self.setPasscodeEntered(true)
     }
     
    
     func didPasscodeEnteredIncorrectly(viewController: KKPasscodeViewController!) {
         println("Did passcode entered incorrectly")
+    }
+    
+    //Method to update the flag to show the passcode or not
+    func setPasscodeEntered (isPasscodeEntered: Bool!) {
+        
+        let passcode = ManageAppSettingsDB.getPassCode()
+        passcode.isPasscodeEntered = isPasscodeEntered
+        
+        ManageAppSettingsDB.removePasscode()
+        ManageAppSettingsDB.insertPasscode(passcode)
     }
 
 }

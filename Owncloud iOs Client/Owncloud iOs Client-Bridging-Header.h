@@ -29,3 +29,4 @@
 #import "ManageUploadsDB.h"
 #import "KKPasscodeViewController.h"
 #import "ManageAppSettingsDB.h"
+#import "PasscodeDto.h"

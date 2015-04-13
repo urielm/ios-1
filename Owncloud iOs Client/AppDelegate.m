@@ -54,7 +54,7 @@
 #import "OCKeychain.h"
 #import "ManageLocation.h"
 #import "ManageAsset.h"
-
+#import "PasscodeDto.h"
 
 #define k_server_with_chunking 4.5 
 
@@ -1624,7 +1624,13 @@ NSString * NotReachableNetworkForDownloadsNotification = @"NotReachableNetworkFo
 
 - (void)checkIfIsNecesaryShowPassCode {
     
+    PasscodeDto *passcode = nil;
+    
     if ([ManageAppSettingsDB isPasscode]) {
+        passcode = [ManageAppSettingsDB getPassCode];
+    }
+    
+    if (passcode && !passcode.isPasscodeEntered) {
         
         KKPasscodeViewController* vc = [[KKPasscodeViewController alloc] initWithNibName:nil bundle:nil];
         vc.delegate = self;
@@ -1649,6 +1655,14 @@ NSString * NotReachableNetworkForDownloadsNotification = @"NotReachableNetworkFo
             [rootController presentViewController:oc animated:NO completion:nil];
         }
     } else {
+        
+        //Restart the passcode to be asked again
+        if (passcode) {
+            passcode.isPasscodeEntered = NO;
+            [ManageAppSettingsDB removePasscode];
+            [ManageAppSettingsDB insertPasscode:passcode];
+        }
+        
         [self initAppWithEtagRequest:YES];
     }
 }

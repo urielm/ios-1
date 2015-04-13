@@ -119,7 +119,7 @@
         
         while ([rs next]) {
             output.passcode = [rs stringForColumn:@"passcode"];
-            output.isPasscodeEntered = [rs stringForColumn:@"is_passcode_entered"];
+            output.isPasscodeEntered = [rs boolForColumn:@"is_passcode_entered"];
         }
         
     }];
