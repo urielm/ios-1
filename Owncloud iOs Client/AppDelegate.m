@@ -1014,6 +1014,22 @@ NSString * NotReachableNetworkForDownloadsNotification = @"NotReachableNetworkFo
 {
     DLog(@"applicationWillEnterForeground");
     
+    PasscodeDto *passcode = nil;
+    
+    if ([ManageAppSettingsDB isPasscode]) {
+        passcode = [ManageAppSettingsDB getPassCode];
+    }
+    
+    //Restart the passcode to be asked again
+    if (passcode && passcode.isPasscodeEntered) {
+        passcode.isPasscodeEntered = NO;
+        [ManageAppSettingsDB removePasscode];
+        [ManageAppSettingsDB insertPasscode:passcode];
+        
+        [self.kkPasscodeViewController closeKeyboards];
+        [self didPasscodeEnteredCorrectly:nil];
+    }
+    
     [self.settingsViewController initStateInstantUpload];
     
     if (_activeUser.username==nil) {
@@ -1632,11 +1648,13 @@ NSString * NotReachableNetworkForDownloadsNotification = @"NotReachableNetworkFo
     
     if (passcode && !passcode.isPasscodeEntered) {
         
-        KKPasscodeViewController* vc = [[KKPasscodeViewController alloc] initWithNibName:nil bundle:nil];
-        vc.delegate = self;
+        if (!self.kkPasscodeViewController) {
+            self.kkPasscodeViewController = [[KKPasscodeViewController alloc] initWithNibName:nil bundle:nil];
+            self.kkPasscodeViewController.delegate = self;
+        }
         
-        OCPortraitNavigationViewController *oc = [[OCPortraitNavigationViewController alloc]initWithRootViewController:vc];
-        vc.mode = KKPasscodeModeEnter;
+        OCPortraitNavigationViewController *oc = [[OCPortraitNavigationViewController alloc]initWithRootViewController:self.kkPasscodeViewController];
+        self.kkPasscodeViewController.mode = KKPasscodeModeEnter;
         
         self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         
@@ -1671,11 +1689,13 @@ NSString * NotReachableNetworkForDownloadsNotification = @"NotReachableNetworkFo
     
     if ([ManageAppSettingsDB isPasscode]) {
         
-        KKPasscodeViewController* vc = [[KKPasscodeViewController alloc] initWithNibName:nil bundle:nil];
-        vc.delegate = self;
+        if (!self.kkPasscodeViewController) {
+            self.kkPasscodeViewController = [[KKPasscodeViewController alloc] initWithNibName:nil bundle:nil];
+            self.kkPasscodeViewController.delegate = self;
+        }
         
-        OCPortraitNavigationViewController *oc = [[OCPortraitNavigationViewController alloc]initWithRootViewController:vc];
-        vc.mode = KKPasscodeModeEnter;
+        OCPortraitNavigationViewController *oc = [[OCPortraitNavigationViewController alloc]initWithRootViewController:self.kkPasscodeViewController];
+        self.kkPasscodeViewController.mode = KKPasscodeModeEnter;
         
         if (IS_IPHONE) {
             [self closeAlertViewAndViewControllers];
@@ -1766,6 +1786,8 @@ NSString * NotReachableNetworkForDownloadsNotification = @"NotReachableNetworkFo
             }
         }
     }
+    
+    self.kkPasscodeViewController = nil;
 }
 
 - (void)didPasscodeEnteredIncorrectly:(KKPasscodeViewController*)viewController{

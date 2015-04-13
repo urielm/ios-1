@@ -117,6 +117,9 @@ typedef NSUInteger KKPasscodeMode;
 @property (nonatomic, assign) KKPasscodeMode mode;
 @property(nonatomic,strong) UIView *dimView;
 
+//Method to remove the keyboard
+- (void) closeKeyboards;
+
 
 @end
 

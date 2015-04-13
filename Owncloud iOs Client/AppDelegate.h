@@ -348,5 +348,7 @@ extern NSString * NotReachableNetworkForDownloadsNotification;
 //Url of the server redirected to be used on uploads in background
 @property (nonatomic, strong) NSString *urlServerRedirected;
 @property (nonatomic, strong) ManageDownloads *downloadManager;
+//Passcode
+@property (nonatomic, strong) KKPasscodeViewController* kkPasscodeViewController;
 
 @end
